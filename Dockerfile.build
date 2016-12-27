@@ -1,0 +1,15 @@
+FROM golang:1.6.4-alpine
+
+ARG CLOUDFLARE_VERSION=0.7.1-beta
+
+RUN apk add --no-cache --virtual .build-dependencies git make bash gcc linux-headers python musl-dev  \
+  && go get -d github.com/cloudflare/cloudflare-go \
+  && cd $GOPATH/src/github.com/cloudflare/cloudflare-go \
+  && git checkout v$CLOUDFLARE_VERSION \
+  && cd cmd/flarectl \
+  && go build -v flarectl.go  \
+  && mv flarectl / \
+  && apk del .build-dependencies  \
+  && rm -rf $GOPATH/src/github.com/cloudflare/cloudflare-go
+
+CMD ["/bin/sh"]
