@@ -9,7 +9,7 @@ docker create --name="cloudflare-build" solidnerd/cloudflare:build
 docker cp cloudlfare-build:/flarectl .
 
 docker build \
-  -f Dockerfile
+  -f Dockerfile \
   --build-arg BUILD_DATE="$(date --rfc-3339=s)" \
   --build-arg VCS_REF=`git rev-parse --short HEAD` \
   -t $IMAGE_NAME .
