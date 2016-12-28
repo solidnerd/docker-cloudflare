@@ -6,7 +6,7 @@ docker build \
   -t solidnerd/cloudflare:build .
 
 docker create --name="cloudflare-build" solidnerd/cloudflare:build
-docker cp cloudlfare-build:/flarectl .
+docker cp $(docker ps -ql):/flarectl .
 
 docker build \
   -f Dockerfile \
