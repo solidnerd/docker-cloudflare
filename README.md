@@ -1,7 +1,7 @@
 docker-cloudflare
 =================
 
-[![](https://images.microbadger.com/badges/image/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own image badge on microbadger.com")[![](https://images.microbadger.com/badges/version/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/commit/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own commit badge on microbadger.com")[![](https://images.microbadger.com/badges/license/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own license badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own image badge on microbadger.com") [![](https://images.microbadger.com/badges/version/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own version badge on microbadger.com") [![](https://images.microbadger.com/badges/commit/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own commit badge on microbadger.com") [![](https://images.microbadger.com/badges/license/solidnerd/cloudflare.svg)](https://microbadger.com/images/solidnerd/cloudflare "Get your own license badge on microbadger.com")
 
 Flarectl in a docker container for using it in hopefully secure way :)
 
