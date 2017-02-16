@@ -2,7 +2,7 @@
 build:
 	@docker build -f Dockerfile.build -t solidnerd/cloudflare:build .
 	@docker create --name="cloudflare-build" solidnerd/cloudflare:build
-	@docker cp cloudlfare-build:/flarectl .
+	@docker cp cloudflare-build:/flarectl .
 	@docker build -f Dockerfile -t solidnerd/cloudflare .
 	@docker rm -f cloudflare-build
 	@docker rmi solidnerd/cloudflare:build
