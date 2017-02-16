@@ -1,4 +1,4 @@
-FROM golang:1.6.4-alpine
+FROM golang:1.7.5-alpine3.5
 
 ARG CLOUDFLARE_VERSION=0.7.2
 
