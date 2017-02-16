@@ -1,6 +1,6 @@
 FROM golang:1.7.5-alpine3.5
 
-ARG CLOUDFLARE_VERSION=0.7.2
+ARG CLOUDFLARE_VERSION=0.7.3
 
 RUN apk add --no-cache --virtual .build-dependencies git make bash gcc linux-headers python musl-dev  \
   && go get -d github.com/cloudflare/cloudflare-go \
