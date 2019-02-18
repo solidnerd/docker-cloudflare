@@ -7,7 +7,7 @@ docker-cloudflare
 
 Otherwise we should try to secure it more.
 
-# Quickstart
+### Set Credentials
 
 Create an directory to save your credentials
 
@@ -25,15 +25,73 @@ EOF
 ```
 
 
-Run the container
+### See Version
 
-```bash
-docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare --help
+USAGE:
+```
+docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare \
+--version
 ```
 
+### See help
 
+```
+docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare \
+--help
+```
+   
+### A DNS update example
 
-## Making an Alias for easy start
+USAGE | type A record:
+```
+docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare \
+dns create-or-update --zone mysite.com --name mysite.com  --proxy --type A --content 11.22.33.44
+```
+
+USAGE | type CNAME record:
+
+```
+docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare \
+dns create-or-update --zone mysite.com --name api.mysite.com  --proxy --type CNAME --content mysite.com
+```
+
+COMMANDS:
+```
+   list, l		List DNS records for a zone
+   create, c		Create a DNS record
+   update, u		Update a DNS record
+   create-or-update, o	Create a DNS record, or update if it exists
+   delete, d		Delete a DNS record
+   help, h		Shows a list of commands or help for one command
+```
+OPTIONS:
+```
+   --zone 	zone name
+   --name 	record name
+   --content 	record content
+   --type 	record type
+   --ttl "1"	TTL (1 = automatic)
+   --proxy	proxy through CloudFlare (orange cloud)
+```  
+### User
+
+USAGE:
+```
+docker run -it --rm --env-file $HOME/.cloudflare/env solidnerd/cloudflare \
+info
+
+```
+
+COMMANDS:
+```
+   info, i	User details
+   update, u	Update user details
+   help, h	Shows a list of commands or help for one command
+```
+
+---
+
+### Making an Alias for easy start
 
 The intention of this container is that it's a tool container so let him a tool container. 
 For this we create an alias to have an normal feeling that this is a "tool" and not a container :)
@@ -71,6 +129,6 @@ flarectl d c --zone example.com --name test.example.com --type CNAME --content e
 ### Delete DNS Record
 
 ```bash
-flarectl d d test.example.com
+flarectl dns delete test.example.com
 ```
  
